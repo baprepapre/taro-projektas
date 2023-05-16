@@ -1,0 +1,163 @@
+body {
+    font-family: 'Schibsted Grotesk', sans-serif;
+    color: #635A75;
+    background-image: url(https://cutewallpaper.org/21/stars-background-gif/stars-night-sky-pixel-pixel-gif-pixel-background-Tiling-.gif);
+    background-attachment: fixed;
+    overflow-y: overlay;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
+ul#arcana, ul#suit, ul#readings {
+    list-style: none;
+    margin-left: -1.8em;
+}
+
+ul.errorlist {
+    list-style: none;
+    height: 0.5em;
+}
+
+nav {
+    width: 75vw;
+    margin: auto;
+    margin-top: 0.5em;
+    background-color: #DDD2F2;
+    border-radius: 1.5em;
+    height: 4.3em;
+}
+
+.navbar-collapse {
+    background-color: #DDD2F2;
+}
+
+a {
+    color: #7D3BCE;
+}
+
+hr {
+    width: 30em;
+    margin: auto auto 1em auto;
+}
+
+.btn, .btn-lg, button[type="submit"], input[type="submit"]{
+    color: #4D4962;
+    background-color: #BAB1EA;
+}
+
+div.main {
+    background-color: #DDD2F2;
+    width: 75vw;
+    margin: auto;
+    text-align: center;
+    padding: 2em;
+    padding-top: 3em;
+    border-radius: 2em;
+}
+
+ul#search {
+    list-style: none;
+    margin-left: -1.8em;
+}
+
+.container#all-cards-container {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: auto auto auto;
+    gap: 1em;
+}
+
+.card {
+    background-color: #DDD2F2;
+}
+
+.container#button-container {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.container#filter-by {
+    width: 30em;
+    height: 13em;
+    border-radius: 3em;
+    padding-right: 4em;
+}
+
+.container#ul-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2em;
+}
+
+hr.smol {
+    width: 6em;
+    margin-bottom: 0.5em;
+}
+
+hr.smol.ler {
+    width: em;
+}
+
+div#info {
+    padding-top: 1em;
+    font-size: 12px;
+}
+
+div.container.login {
+    display: grid;
+    grid-row: auto;
+    justify-content: center;
+}
+
+div.container.index {
+    width: 55em;
+}
+
+table.table.login {
+    width: 20em;
+}
+
+table.table.restore {
+    width: 28em;
+    text-align: right;
+}
+
+.table.table-hover {
+    text-align: left;
+}
+
+div.container.register, div.container.profile {
+    width: 30em;
+}
+
+div.card-container {
+    width: 220px;
+}
+
+p.bigger {
+    font-size: 18px;
+}
+
+div.desc {
+    padding: 0em 7em;
+}
+
+div.link {
+    width: fit-content;
+    text-align: left;
+    height: 0.2em;
+}
+
+div.results {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    gap: 1em;
+}
+div.result.card {
+    width: 200px;
+}

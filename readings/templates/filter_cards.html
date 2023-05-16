@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container" id="filter-by-container">
+    <h2 id="filter-by-header">Rūšiuoti kortas pagal:</h2>
+    <div class="container" id="ul-container">
+        <div id="filter-by-arcana">
+            <h5>Arkanus</h5>
+            <ul id="arcana">
+                <li><a href="{% url 'filter_cards' 'major' %}">Didieji Arkanai</a></li>
+                <li><a href="{% url 'filter_cards' 'minor' %}">Mažieji Arkanai</a></li>
+            </ul>
+        </div>
+        <div id="filter-by-suit">
+            <h5>Rūšis</h5>
+            <ul id="suit">
+                <li><a href="{% url 'filter_cards' 'wands' %}">Lazdos</a></li>
+                <li><a href="{% url 'filter_cards' 'cups' %}">Taurės</a></li>
+                <li><a href="{% url 'filter_cards' 'swords' %}">Kardai</a></li>
+                <li><a href="{% url 'filter_cards' 'pentacles' %}">Monetos</a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+</div>
+{% if attribute == 'major' %}
+<h2>Didieji Arkanai</h2>
+{% elif attribute == 'minor' %}
+<h2>Mažieji Arkanai</h2>
+{% elif attribute == 'cups' %}
+<h2>Taurės</h2>
+{% elif attribute == 'wands' %}
+<h2>Lazdos</h2>
+{% elif attribute == 'swords' %}
+<h2>Kardai</h2>
+{% elif attribute == 'pentacles' %}
+<h2>Monetos</h2>
+{% endif %}<br>
+<div class="container" id="all-cards-container">
+    {% for card in cards %}
+    <div class="d-flex align-items-stretch">
+        <div class="card shadow-sm">
+            {{ card.name }}
+            <a href="{% url 'card' card.pk %}" class="text-center">
+            <img style="width: 200px; height: 351px;"
+            alt="{{ card.name }}"
+            src="{{ card.image.url }}">
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

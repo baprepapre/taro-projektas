@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container specific-card-page">
+<div class="link">
+<a href="{% url 'all_cards' %}"><small> ⟵ Grįžti į kortų sąrašą</small></a>
+</div>
+<div class="container specific-card">
+<h2>{{ card.name }}</h2>
+{% if card.arcana == 'major' %}
+<p class="bigger"><strong>Didžiųjų Arkanų korta</strong></p>
+{% elif card.arcana == 'minor' %}
+<p class="bigger"><strong>Mažųjų Arkanų korta</strong></p>
+{% endif %}
+<hr>
+<img src="{{ card.image.url }}" style="width: 220px; height: 386;">
+<br><br>
+<div class="desc">
+<p class="bigger">{{ card.description }}</p>
+</div>
+<p><strong>Reikšmė: </strong>{{ card.meaning }}</p>
+<p><strong>Reikšmė - apversta korta: </strong>{{ card.r_meaning }}</p>
+<p><strong></strong></p>
+<p><strong></strong></p>
+</div>
+
+{% endblock %}

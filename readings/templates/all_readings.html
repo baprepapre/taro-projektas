@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container" id="readings-container">
+    <h2>Prieš pradėdami būrimą...</h2>
+    <h6>...kelias minutes susitelkite į klausimą, kurį norite užduoti kortoms ar į problemą, apie kurią norite gauti daugiau informacijos</h6><br>
+
+    <img style="width: 60px; height: 70px;"
+    src="https://orig00.deviantart.net/838f/f/2018/288/9/3/crystal_ball_by_king_lulu_deer-dcpkbz4.gif"><br><br>
+
+    <ul id="readings">
+    <li class="nav-item"><a href="{% url 'one_card' %}">Vienos kortos būrimas</a></li>
+    <li class="nav-item"><a href="{% url 'three_cards' 1 %}">Praeitis, Dabartis, Ateitis</a></li>
+    <li class="nav-item"><a href="{% url 'three_cards' 2 %}">Jūs, Jūsų Kelias, Jūsų Potencialas</a></li>
+    <li class="nav-item"><a href="{% url 'three_cards' 3 %}">Situacija, Veiksmas, Baigtis</a></li>
+    </ul>
+    <hr>
+    <small>
+    Vienos kortos taro būrimai yra puikus būdas mokytis taro, susipažinti su kortomis ar nauju taro kortų rinkiniu ir tobulinti savo intuityvų skaitymą. Tam galite pasirinkti reguliarų, netgi kasdienį, ryto / popietės / vakaro laiką, kad ištrauktumėte kortą.
+    Vienos kortos būrimas taip pat veikia gerai, kai tiesiog jaučiatės praradę kryptį ar nerimaujate ir norite greitos konsultacijos. Jums nereikia nieko pernelyg sudėtingo ar sunkaus, tiesiog vieno pranešimo, ties kuriuo galėsite sutelkti dėmesį.
+    Toks būrimas taip pat gali atsakyti į vienkartinį, paprastą klausimą. 
+    Tačiau, jei norite sudėtingo sprendimo ar atsakymo ilgesniam laikotarpiui nei vienai dienai, vienos kortos traukimo gali nepakakti. Tikriausiai turite daugiau nei vieną klausimą, susijusį su jūsų tema, todėl jums reikia daugiau kortų. 
+    Taro aukso taisyklė yra vienas klausimas = viena korta. 
+    </small>
+</div>
+
+
+{% endblock %}

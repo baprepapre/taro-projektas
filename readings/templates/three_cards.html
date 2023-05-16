@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="link">
+    <a href="{% url 'all_readings' %}"><small> ⟵ Grįžti į būrimų sąrašą</small></a>
+</div>
+<br>
+<div class="three-card container row">
+    <div class="card-container col-sm">
+        <div class="card-represents">
+            {% if reading_type == 1 %}
+            <h2>Praeitis</h2>
+            {% elif reading_type == 2 %}
+            <h2>Jūs</h2>
+            {% elif reading_type == 3 %}
+            <h2>Situacija</h2>
+            {% endif %}
+        </div>
+        <div class="card-name">
+            <h5>{{card1.card}}{{card1.position}}</h5>
+        </div>
+        <div class="card-img">
+        {% if card1.position == '' %}
+            <img style="width: 220px; height: 386px;"
+            alt="{{ card1.card }}"
+            src="{{ card1.card.image.url }}"/>
+            {% else %}
+            <img style="width: 220px; height: 386px; transform: rotate(180deg);"
+            alt="{{ card1.card }}"
+            src="{{ card1.card.image.url }}"/>
+            {% endif %}
+        </div>
+        <div class="card-meaning">
+            {% if card1.position == '' %}
+            <strong>{{card1.card.meaning}}</strong>
+            {% else %}
+            <strong>{{card1.card.r_meaning}}</strong>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-container col-sm">
+        <div class="card-represents">
+            {% if reading_type == 1 %}
+            <h2>Dabartis</h2>
+            {% elif reading_type == 2 %}
+            <h2>Jūsų Kelias</h2>
+            {% elif reading_type == 3 %}
+            <h2>Veiksmas</h2>
+            {% endif %}
+        </div>
+        <div class="card-name">
+            <h5>{{card2.card}}{{card2.position}}</h5>
+        </div>
+        <div class="card-img">
+        {% if card2.position == '' %}
+            <img style="width: 220px; height: 386px;"
+            alt="{{ card2.card }}"
+            src="{{ card2.card.image.url }}"/>
+            {% else %}
+            <img style="width: 220px; height: 386px; transform: rotate(180deg);"
+            alt="{{ card2.card }}"
+            src="{{ card2.card.image.url }}"/>
+            {% endif %}
+        </div>
+        <div class="card-meaning">
+            {% if card2.position == '' %}
+            <strong>{{card2.card.meaning}}</strong>
+            {% else %}
+            <strong>{{card2.card.r_meaning}}</strong>
+            {% endif %}
+        </div>
+    </div>
+    <div class="card-container col-sm">
+        <div class="card-represents">
+            {% if reading_type == 1 %}
+            <h2>Ateitis</h2>
+            {% elif reading_type == 2 %}
+            <h2>Jūsų Potencialas</h2>
+            {% elif reading_type == 3 %}
+            <h2>Baigtis</h2>
+            {% endif %}
+        </div>
+        <div class="card-name">
+            <h5>{{card3.card}}{{card3.position}}</h5>
+        </div>
+        <div class="card-img">
+        {% if card3.position == '' %}
+            <img style="width: 220px; height: 386px;"
+            alt="{{ card3.card }}"
+            src="{{ card3.card.image.url }}"/>
+            {% else %}
+            <img style="width: 220px; height: 386px; transform: rotate(180deg);"
+            alt="{{ card3.card }}"
+            src="{{ card3.card.image.url }}"/>
+            {% endif %}
+        </div>
+        <div class="card-meaning">
+            {% if card3.position == '' %}
+            <strong>{{card3.card.meaning}}</strong>
+            {% else %}
+            <strong>{{card3.card.r_meaning}}</strong>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

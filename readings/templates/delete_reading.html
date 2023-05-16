@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Ištrinti įrašą</h2>
+<p>Ar tikrai norite ištrinti būrimo įrašą?</p>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn" value="Taip, ištrinti">
+    <a href="{% url 'my_readings' %}">Ne, grįžti atgal</a>
+</form>
+
+{% endblock %}

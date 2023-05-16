@@ -1,0 +1,36 @@
+{% extends "base.html" %} 
+<!-- {% load static %} -->
+
+{% block content %}
+
+<div class="link">
+    <a href="{% url 'all_readings' %}"><small> ⟵ Grįžti į būrimų sąrašą</small></a>
+</div>
+<h2>Vienos kortos būrimas</h2>
+<hr>
+<div class="one-card container">
+    <div class="card-name">
+        <h4>{{card.card}}{{card.position}}</h4>
+    </div>
+    <div class="card-img">
+        {% if card.position == '' %}
+        <img style="width: 220px; height: 386px;"
+        alt="Image description"
+        src="{{ card.card.image.url }}">
+        {% else %}
+        <img style="width: 220px; height: 386px; transform: rotate(180deg);"
+        alt="Image description"
+        src="{{ card.card.image.url }}">
+        {% endif %}
+    </div>
+    <br>
+    <div class="card-meaning">
+        {% if card.position == '' %}
+        <strong>{{card.card.meaning}}</strong>
+        {% else %}
+        <strong>{{card.card.r_meaning}}</strong>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

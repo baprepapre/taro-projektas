@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Paieškos pagal "{{query}}" rezultatai:</h2>
+  </br>
+  <div class="results d-md-flex-row">
+  {% if cards %}
+    {% for card in cards %}
+        <div class="result card shadow-sm">
+            {{ card.name }}
+            <a href="{% url 'card' card.pk %}" class="text-center">
+            <img style="width: 200px; height: 351px;"
+            alt="{{ card.name }}"
+            src="{{ card.image.url }}">
+            </a>
+        </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>Pagal jūsų užklausą nieko neradome</p>
+  {% endif %}
+
+
+  {% endblock %}
